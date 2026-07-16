@@ -185,6 +185,14 @@ jobs:
       - name: Print role ARN
         run: |
           echo "arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/pharma-dev-github-actions-role"
+
+      - name: Print GitHub context
+        run: |
+          echo "Repository = ${{ github.repository }}"
+          echo "Ref        = ${{ github.ref }}"
+          echo "Ref Name   = ${{ github.ref_name }}"
+          echo "Event      = ${{ github.event_name }}"
+        
       # ── AWS credentials via OIDC (no long-lived keys) ─────────────────────────
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
