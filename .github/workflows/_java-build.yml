@@ -196,11 +196,11 @@ jobs:
         run: |
           echo "ACTIONS_ID_TOKEN_REQUEST_URL=$ACTIONS_ID_TOKEN_REQUEST_URL"
           echo "ACTIONS_ID_TOKEN_REQUEST_TOKEN exists:"
-        if [ -n "$ACTIONS_ID_TOKEN_REQUEST_TOKEN" ]; then
-          echo "YES"
-        else
-          echo "NO"
-        fi
+          if [ -n "$ACTIONS_ID_TOKEN_REQUEST_TOKEN" ]; then
+            echo "YES"
+          else
+            echo "NO"
+          fi
       # ── AWS credentials via OIDC (no long-lived keys) ─────────────────────────
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
