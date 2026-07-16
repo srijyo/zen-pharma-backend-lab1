@@ -179,6 +179,9 @@ jobs:
           path: ${{ inputs.service-dir }}/target/dependency-check-report.html
           retention-days: 14
 
+      - name: Debug OIDC claims
+        uses: github/actions-oidc-debugger@v1
+
       # ── AWS credentials via OIDC (no long-lived keys) ─────────────────────────
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
